@@ -10,6 +10,7 @@ TODO:
 
 <img width="797" height="661" alt="image" src="https://github.com/user-attachments/assets/9574d229-d096-475c-98fe-a970d2b90ed6" />
 
+```
 MEMS mic (PDM 1-bit, ~MHz)
    │  (I2S generuje zegar, dane idą do DMA)
 DMA/I2S RX ──► bufor PDM (ping-pong)
@@ -47,11 +48,11 @@ Dekoder do PCM16:
 Bufor TX (ping-pong) → DMA → I2S TX
    │
 Kodek CS43L22 (sterowany po I²C) → wyjście jack
-
+```
 
 
 # Struktura (Core, Inc i Src powinny byc generowane przez stm32cudeIDE)
-
+```
 /Core
 │
 ├── Inc/                                # Pliki nagłówkowe (.h)
@@ -109,3 +110,4 @@ Kodek CS43L22 (sterowany po I²C) → wyjście jack
     │
     ├── hw_init.c                       # Inicjalizacja systemu, zegarów, GPIO, DMA, I2S, USB, SDIO
     └── main.c                          # Punkt wejścia programu (CubeMX main) + wywołanie app_main()
+ ```
