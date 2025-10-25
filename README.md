@@ -111,3 +111,8 @@ Kodek CS43L22 (sterowany po I²C) → wyjście jack
     ├── hw_init.c                       # Inicjalizacja systemu, zegarów, GPIO, DMA, I2S, USB, SDIO
     └── main.c                          # Punkt wejścia programu (CubeMX main) + wywołanie app_main()
  ```
+
+ # Dodatkowe biblioteki
+
+ ## CMSIS DSP
+ https://community.st.com/t5/stm32-mcus/configuring-dsp-libraries-on-stm32cubeide/ta-p/49637
