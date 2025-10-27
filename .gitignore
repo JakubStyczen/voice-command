@@ -1,3 +1,16 @@
+# STM32cubeIDE
+*.ld
+*.project
+*.cproject
+*.mxproject
+*.launch
+.settings/
+Debug/
+Drivers/
+Middlewares/
+program_model/
+USB_HOST/
+
 # Prerequisites
 *.d
 
