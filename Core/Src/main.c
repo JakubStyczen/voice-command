@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,12 +69,23 @@ void MX_USB_HOST_Process(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-int __io_putchar(int ch) {
-	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
-	return ch;
+//int __io_putchar(int ch) {
+//	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+//	return ch;
+//}
+
+int _write(int file, char *ptr, int len)
+{
+    for (int i = 0; i < len; i++)
+        ITM_SendChar(*ptr++);
+    return len;
 }
 /* USER CODE END 0 */
 
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
 
