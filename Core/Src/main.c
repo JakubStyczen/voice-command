@@ -73,11 +73,19 @@ void MX_USB_HOST_Process(void);
 //	return ch;
 //}
 
-int _write(int file, char *ptr, int len)
+// INFO: send data via SWV (in debug mode)
+//int _write(int file, char *ptr, int len)
+//{
+//    for (int i = 0; i < len; i++)
+//        ITM_SendChar(*ptr++);
+//    return len;
+//}
+
+// INFO: send data via USART2
+int __io_putchar(int ch)
 {
-    for (int i = 0; i < len; i++)
-        ITM_SendChar(*ptr++);
-    return len;
+    HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
+    return ch;
 }
 /* USER CODE END 0 */
 
