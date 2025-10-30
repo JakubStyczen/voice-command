@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -124,9 +123,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(GPIOD, LD4_Pin);  // Zmień stan diody PD12
-	  printf("Zmieniono stan\r\n");
-	  HAL_Delay(1000); // Odczekaj 500 ms
+	app_main();
     /* USER CODE END WHILE */
     MX_USB_HOST_Process();
 
