@@ -6,4 +6,11 @@
 void CLI_Init(UART_HandleTypeDef *huart);
 void CLI_Process(void);
 
+/*
+TODO:
+play _
+cd
+ls
+mkdir
+*/
 #endif

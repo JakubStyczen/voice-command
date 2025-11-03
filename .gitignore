@@ -1,8 +1,5 @@
 # STM32cubeIDE
 *.ld
-*.project
-*.cproject
-*.mxproject
 *.launch
 .settings/
 Debug/

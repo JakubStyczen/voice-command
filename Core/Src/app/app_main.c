@@ -11,6 +11,4 @@ int app_main(){
 		  printf("Zmieniono stan\r\n");
 		  HAL_Delay(1000); // Odczekaj 500 ms
 	}
-
-
 }
