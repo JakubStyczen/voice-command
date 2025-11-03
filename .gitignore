@@ -3,7 +3,9 @@
 *.launch
 .settings/
 Debug/
-Drivers/
+Drivers/CMSIS/Device/
+Drivers/CMSIS/Include/
+Drivers/STM32F4xx_HAL_Driver/
 Middlewares/
 program_model/
 USB_HOST/
