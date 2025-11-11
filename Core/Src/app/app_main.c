@@ -1,14 +1,27 @@
 #include "app/app_main.h"
+#include "voicecmd/vc_filters.h"
+#include "voicecmd/vc_data_if.h"
 #include <stdio.h>
+#include <math.h>
+#include <tests/test_agc.h>
+#include <tests/test_conversion_320.h>
+#include <tests/test_encoders.h>
+
 
 
 int app_main(){
+    // TESTS
 
-//	CLI_Init(&huart2);
 
-	while(1){
-		  HAL_GPIO_TogglePin(GPIOD, LD4_Pin);  // Zmień stan diody PD12
-		  printf("Zmieniono stan\r\n");
-		  HAL_Delay(1000); // Odczekaj 500 ms
-	}
+    // Test funkcji AGC
+    // run_agc_test();
+    
+    // Test funkcji konwersji i filtrów HPF
+    // run_conversion_test();
+    
+    // Test funkcji kompresji kodeków
+    // run_encoders_test();
+
+    
+    return 0;
 }

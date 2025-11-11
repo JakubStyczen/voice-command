@@ -23,6 +23,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+//#define ARM_MATH_CM4
+
+//#include "vc_filters.h"
+//#include "vc_data_if.h"
+ #include "app/app_main.h"
+//#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
