@@ -6,12 +6,16 @@
 #include <tests/test_agc.h>
 #include <tests/test_conversion_320.h>
 #include <tests/test_encoders.h>
+#include "tests/test_fatfs.h"
 
 
 
 int app_main(){
     // TESTS
 
+
+	// Test zapisu FatFs
+	 run_fatfs_test();
 
     // Test funkcji AGC
     // run_agc_test();
