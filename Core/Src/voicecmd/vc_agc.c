@@ -5,7 +5,7 @@
  */
 void agc_f32_init(agc_f32_t *agc, float fs, float frame_len_ms)
 {
-    agc->target_rms = 0.05f;  // docelowy RMS ~ -26 dBFS
+    agc->target_rms = 0.7f;  // docelowy RMS ~ -3 dBFS (blisko pełnej skali)
     agc->current_gain = 1.0f;
 
     float frame_time = frame_len_ms / 1000.0f;

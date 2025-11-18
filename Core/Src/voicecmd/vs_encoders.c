@@ -210,3 +210,31 @@ int g722_encode_20ms_64k(const int16_t *pcm320, uint8_t *out160) {
     // zwraca liczbę bajtów; oczekuj 160
     return g722_encode(enc, pcm320, 320, out160);
 }
+
+void g722_webrtc_init_64k(void)
+{
+    WebRtcG722_CreateEncoder(&g_enc);
+    WebRtcG722_EncoderInit(g_enc);   // 64 kb/s, 16 kHz
+
+    WebRtcG722_CreateDecoder(&g_dec);
+    WebRtcG722_DecoderInit(g_dec);   // 64 kb/s, 16 kHz
+}
+
+int g722_webrtc_encode_20ms(const int16_t *pcm320, uint8_t *out160)
+{
+    // Zwraca bytes; oczekuj 160 przy 64 kb/s
+    return WebRtcG722_Encode(g_enc, (int16_t*)pcm320, 320, out160);
+}
+
+int g722_webrtc_decode_20ms(const uint8_t *in160, int16_t *pcm320_out)
+{
+    int16_t speech_type;
+    // Zwraca samples; oczekuj 320
+    return WebRtcG722_Decode(g_dec, (uint8_t*)in160, 160, pcm320_out, &speech_type);
+}
+
+void g722_webrtc_free(void)
+{
+    if (g_enc) { WebRtcG722_FreeEncoder(g_enc); g_enc = NULL; }
+    if (g_dec) { WebRtcG722_FreeDecoder(g_dec); g_dec = NULL; }
+}

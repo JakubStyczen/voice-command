@@ -9,11 +9,12 @@ extern "C" {
 #include "voicecmd/vc_data_if.h"
 #include "arm_math.h"
 #include "g722_encoder.h"
+#include "g722_interface.h"
 
 #define VC_MAX_FRAME_SAMPLES      320
 #define VC_PCM16_BYTES_PER_FRAME  (VC_MAX_FRAME_SAMPLES * 2)
 /* dla IMA-ADPCM mono: 4B nagłówka + ceil((N-1)/2) = 4 + 160 = 164 */
-#define VC_IMA_MONO_BYTES_PER_FRAME 164
+#define VC_IMA_MONO_BYTES_PER_FRAME  164
 #define VC_G722_BYTES_PER_FRAME 160
 
 
@@ -63,6 +64,18 @@ void g722_init_64k_enc(void);
 void g722_deinit_enc(void);
 
 int g722_encode_20ms_64k(const int16_t *pcm320, uint8_t *out160);
+
+static G722EncInst *g_enc = NULL;
+static G722DecInst *g_dec = NULL;
+
+void g722_webrtc_init_64k(void);
+
+int g722_webrtc_encode_20ms(const int16_t *pcm320, uint8_t *out160);
+
+int g722_webrtc_decode_20ms(const uint8_t *in160, int16_t *pcm320_out);
+
+void g722_webrtc_free(void);
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

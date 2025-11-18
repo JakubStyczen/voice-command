@@ -27,6 +27,7 @@ if (!frm || !cfg) return;
         int wrote_g722 = g722_decode_20ms_64k(g722_data, samples);
         if (wrote_g722 != 320) break; 
         g722_deinit_dec(); // maybe somewhere else
+        break;
     }  
 }
 
